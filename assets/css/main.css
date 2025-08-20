@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.backFon {
+  /* width: 100vw;
+  height: 100vh; */
+  /* background-color: rgb(22, 22, 59); */
+overflow: hidden; /* səhifənin uzanmasının qarşısını alır */
+  position: relative; /* uşaq elementlər üçün əsas nöqtə olacaq */
+
+/* bunu sonrada elave etdim , goruntuye gore  */
+background-image: url(https://i.ytimg.com/vi/IDbaNfaLLP0/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGBcgPyh_MA8=&rs=AOn4CLAmr3OR6__gceSlA41lCT9FW3hVsg);
+background-repeat: no-repeat;
+background-size: cover;
+width: 100vw;
+height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  
+}
+
+.mountains {
+  width: 300px;
+  height: 200px;
+  background-color: #252f38;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-radius: 50px;
+  /* display: flex;
+    align-items: center;  bu burda islemedi*/
+
+    clip-path: polygon(
+  0% 100%,
+  35% 40%,
+  45% 30%,
+  50% 28%,   /* daha yumşaq təpə üçün bir az daha yastı */
+  55% 30%,
+  65% 40%,
+  100% 100%
+);
+/* bunu komeklikle elave etdim  */
+}
+.theMountains {
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  /* bu mountain-i aşağı salır */
+  justify-content: center;
+}
+.mountainContainer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.secondMountains {
+  width: 400px;
+  height: 300px;
+  background-color: #252f38;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-radius: 50px;
+  clip-path: polygon(
+  0% 100%,
+  35% 40%,
+  45% 30%,
+  50% 28%,   /* daha yumşaq təpə üçün bir az daha yastı */
+  55% 30%,
+  65% 40%,
+  100% 100%
+);
+}
+.theMountainsSecond {
+  /* height: 100vh; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+}
+
+
+.moon {
+  width: 50px;
+  height: 50px;
+  background-color: aliceblue;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center center;
+
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 30px 15px rgba(240, 248, 255, 0.5);
+  animation: glow 2s infinite ease-in-out;
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 15px 5px rgba(240, 248, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 35px 20px rgba(240, 248, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 15px 5px rgba(240, 248, 255, 0.3);
+  }
+}
+
+.star {
+  width: 6px;
+  height: 6px;
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+  /* animation: drift 10s linear infinite; */
+  animation: drift 10s linear infinite, twinkle 2s ease-in-out infinite;
+  box-shadow: 0 0 6px white;
+}
+.star:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.star:nth-child(3) { top: 30%; left: 90%; animation-delay: 5s; }
+
+.star.fixed {
+  animation: none;
+}
+
+@keyframes drift {
+  from {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-200px, 200px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.fixed {
+  animation: none;
+}
+.star:nth-child(odd) {
+  top: calc(100% * var(--i));
+  left: calc(100% * var(--j));
+}
+.star:nth-child(1)  { top: 5%; left: 10%; }
+.star:nth-child(2)  { top: 12%; left: 40%; }
+.star:nth-child(3)  { top: 20%; left: 60%; }
+.star:nth-child(4)  { top: 25%; left: 80%; }
+.star:nth-child(5)  { top: 32%; left: 25%; }
+.star:nth-child(6)  { top: 40%; left: 50%; }
+.star:nth-child(7)  { top: 45%; left: 70%; }
+.star:nth-child(8)  { top: 50%; left: 90%; }
+.star:nth-child(9)  { top: 58%; left: 15%; }
+.star:nth-child(10) { top: 65%; left: 35%; }
+.star:nth-child(11) { top: 68%; left: 55%; }
+.star:nth-child(12) { top: 72%; left: 75%; }
+.star:nth-child(13) { top: 80%; left: 20%; }
+.star:nth-child(14) { top: 55%; left: 25%; }
+.star:nth-child(15) { top: 92%; left: 65%; }
+
+@keyframes drift {
+  from {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-200px, 200px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  padding: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 2px 2px 4px #000000;
+   color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
